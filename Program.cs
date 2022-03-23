@@ -11,7 +11,7 @@ namespace AnalizadorMain
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new AnalizadorWindow());
-            Console.WriteLine("ola mundo");
+            Console.WriteLine("exemplo de uso git hub");
             Console.WriteLine("ola mundo");
         }
     }
