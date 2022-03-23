@@ -26,7 +26,7 @@ namespace AnalizadorLexicoWord
 
             // Numeros
             new NonReservedWord("Numero decimal", "(\\d+\\.\\d+)"),
-            new NonReservedWord("Numero inteiro", "[\\d]+")
+            new NonReservedWord("Numero inteiro", "\\d+")
         };
     }
 
@@ -49,7 +49,7 @@ namespace AnalizadorLexicoWord
           // Modificador de acesso
           new ReservedWord("private",   "Modificador de acesso"),
           new ReservedWord("public",    "Modificador de acesso"),
-          new ReservedWord("protecte", "Modificador de acesso"),
+          new ReservedWord("protecte",  "Modificador de acesso"),
 
           // Modificadores de classes, variáveis ou métodos
           new ReservedWord("static",    "Modificadores de classes, variáveis ou métodos"),

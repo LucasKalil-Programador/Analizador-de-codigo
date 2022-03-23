@@ -11,6 +11,8 @@ namespace AnalizadorMain
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new AnalizadorWindow());
+            Console.WriteLine("ola mundo");
+            Console.WriteLine("ola mundo");
         }
     }
 }

@@ -10,7 +10,6 @@ namespace AnalizadorMain
 {
     public partial class AnalizadorWindow : Form
     {
-
         public AnalizadorWindow()
         {
             InitializeComponent();
@@ -40,7 +39,7 @@ namespace AnalizadorMain
                     tokensTable.Rows.Add(resultado[i].ToArray());
                 else
                     errorTable.Rows.Add(resultado[i].GetPossibleError());
-            Console.WriteLine(new TimeSpan(System.DateTime.Now.Ticks - time));
+            Console.WriteLine("Tempo de processamento demorou: " + new TimeSpan(System.DateTime.Now.Ticks - time));
         }
 
         private void fontSize_ValueChanged(object sender, EventArgs e)
