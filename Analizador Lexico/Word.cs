@@ -67,7 +67,7 @@ namespace AnalizadorLexicoWord
           /*changed*/ new ReservedWord("GNRdec",   "Tipo primitivo"),
           /*changed*/ new ReservedWord("GNRint",   "Tipo primitivo"),
           /*changed*/ new ReservedWord("GHeavy",   "Tipo primitivo"),
-          /*changed*/ new ReservedWord("GEco",     "Tipo primitivo"),
+          /*changed*/ new ReservedWord("GEcko",     "Tipo primitivo"),
           /*changed*/ new ReservedWord("GMinions", "Tipo primitivo"),
           /*changed*/ new ReservedWord("GWave",    "Tipo primitivo"),
 
