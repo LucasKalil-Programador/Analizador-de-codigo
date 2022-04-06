@@ -57,6 +57,7 @@ namespace AnalizadorLexicoScanner
                         if (currentIndex == 0) break;
                     }
                 }
+
                 for (int i = 0; i < reservedWords.Length; i++)
                 {
                     Match match = reservedWords[i].wordRegex.Match(line);
@@ -74,7 +75,7 @@ namespace AnalizadorLexicoScanner
                 if (startLine == line) break;
                 index++;
             }
-
+          
             if (new Regex("\\S+").Match(line).Success)
                 tokens.Add(new Token("Linha com erro: \"" + rawLine + "\"", lineIndex.ToString()));
         }

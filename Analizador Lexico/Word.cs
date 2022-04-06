@@ -47,27 +47,29 @@ namespace AnalizadorLexicoWord
         public static ReservedWord[] reservedWords = new ReservedWord[]
         {
           // Modificador de acesso
-          new ReservedWord("private",   "Modificador de acesso"),
-          new ReservedWord("public",    "Modificador de acesso"),
-          new ReservedWord("protecte",  "Modificador de acesso"),
+          /*changed*/ new ReservedWord("GCamp",  "Modificador de acesso"),
+          /*changed*/ new ReservedWord("GBell",  "Modificador de acesso"),
+          /*changed*/ new ReservedWord("GGuard", "Modificador de acesso"),
 
           // Modificadores de classes, variáveis ou métodos
-          new ReservedWord("static",    "Modificadores de classes, variáveis ou métodos"),
-          new ReservedWord("abstract",  "Modificadores de classes ou métodos"),
-          new ReservedWord("class",     "Declarador de clase"),
-          new ReservedWord("extends",   "Modificadores de classes"),
-          new ReservedWord("final",     "Modificadores de classes, variáveis ou métodos"),
-          new ReservedWord("implements","Modificadores de classes"),
-          new ReservedWord("interface", "Modificadores de classes"),
-          new ReservedWord("new",       "Inicializador de classe"),
+          /*changed*/ new ReservedWord("GNeutral", "Modificadores de classes, variáveis ou métodos"),
+          /*changed*/ new ReservedWord("GDice",    "Modificadores de classes ou métodos"),
+          /*changed*/ new ReservedWord("GTier",    "Declarador de clase"),
+          /*changed*/ new ReservedWord("GCombo",   "Modificadores de classes"),
+          /*changed*/ new ReservedWord("GOkizeme", "Modificadores de classes, variáveis ou métodos"),
+          /*changed*/ new ReservedWord("GPlus",    "Modificadores de classes"),
+          /*changed*/ new ReservedWord("GHud",     "Modificadores de classes"),
+          /*changed*/ new ReservedWord("GCMneo",   "Inicializador de classe"),
 
           // Tipos primitivos
-          new ReservedWord("byte",    "Tipo primitivo"),
-          new ReservedWord("short",   "Tipo primitivo"),
-          new ReservedWord("int",     "Tipo primitivo"),
-          new ReservedWord("long",    "Tipo primitivo"),
-          new ReservedWord("boolean", "Tipo primitivo"),
-          new ReservedWord("char",    "Tipo primitivo"),
+          /*changed*/ new ReservedWord("GHit",     "Tipo primitivo"),
+          /*changed*/ new ReservedWord("GLight",   "Tipo primitivo"),
+          /*changed*/ new ReservedWord("GNRdec",   "Tipo primitivo"),
+          /*changed*/ new ReservedWord("GNRint",   "Tipo primitivo"),
+          /*changed*/ new ReservedWord("GHeavy",   "Tipo primitivo"),
+          /*changed*/ new ReservedWord("GEco",     "Tipo primitivo"),
+          /*changed*/ new ReservedWord("GMinions", "Tipo primitivo"),
+          /*changed*/ new ReservedWord("GWave",    "Tipo primitivo"),
 
           // Restritores
           new ReservedWord("{", "Abertura de restritor",    "\\{"),
@@ -95,18 +97,22 @@ namespace AnalizadorLexicoWord
           new ReservedWord("=", "Operador matematico", "="),
 
           // Loops e condicionais
-          new ReservedWord("for",   "Inicializador de loop",     "for"),
-          new ReservedWord("if",    "Inicializador Condicional", "if"),
-          new ReservedWord("while", "Inicializador de loop",     "while"),
-          new ReservedWord("true",  "Identificador booleano",    "true"),
-          new ReservedWord("false", "Identificador booleano",    "false"),
+          /*changed*/ new ReservedWord("GComboloop",       "Inicializador de loop",     "for"),
+          /*changed*/ new ReservedWord("GWard",           "Inicializador condicional", "GWard"),
+          /*changed*/ new ReservedWord("GGank",           "Continuação condiconal",    "GGank"),
+          /*changed*/ new ReservedWord("GChalice",        "Inicializador condicional", "GChalice"),
+          /*changed*/ new ReservedWord("GGlyph",          "Continuação condiconal",    "GGlyph"),
+          /*changed*/ new ReservedWord("GLoop",           "Inicializador de loop",     "while"),
+          /*changed*/ new ReservedWord("GSafeonblock",     "Identificador booleano",    "true"),
+          /*changed*/ new ReservedWord("GNegativeonblock", "Identificador booleano",    "false"),
 
           // outros
-          new ReservedWord("return", "Retorno de Metodo", "(\\s|^)return"),
-          new ReservedWord("null", "Objeto nullo"),
+          /*changed*/ new ReservedWord("GParry",      "Retorno de Metodo", "(\\s|^)GParry(\\s|;)"),
+          /*changed*/ new ReservedWord("GFnull",       "Objeto nullo"),
           new ReservedWord(".", "Conector",           "\\."),
           new ReservedWord(";", "Final de instrução", ";"),
           new ReservedWord(",", "Separador",          ","),
+          new ReservedWord("!", "Negação",            ","),
           new ReservedWord("?", "Operador Ternario",  "\\?"),
           new ReservedWord(":", "Operador Ternario",  ":")
         };
