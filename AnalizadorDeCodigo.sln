@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsApp1", "..\WinForms
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3F3E5256-BDBC-4E6F-9D36-5B102468C4BF}"
 	ProjectSection(SolutionItems) = preProject
-		Atalhos uteis.txt = Atalhos uteis.txt
+		Atalhos uteis.gitignore = Atalhos uteis.gitignore
 	EndProjectSection
 EndProject
 Global
