@@ -1,0 +1,5 @@
+CTRL + R -> CTRL + G = organize imports
+CTRL + E -> CTRL + G = auto format
+CTRL + M -> CTRL + O = reduz codigo
+CTRL + M -> CTRL + P = aumenta codigo
+F2 = renomear

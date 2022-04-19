@@ -7,19 +7,38 @@ using System.Text.RegularExpressions;
 
 namespace AnalizadorLexicoScanner
 {
+
+    /// <summary>
+    /// Classe que escanea um codigo
+    /// </summary>
     public class CodeScanner
     {
-        private static NonReservedWord[] nonReservedWords = NonReservedWord.nonReservedWords;
-        private static ReservedWord[] reservedWords = ReservedWord.reservedWords;
+        /// <summary>
+        /// Lista de palavras a serem procuradas no codigo
+        /// </summary>
+        private readonly static Word[] ListOfWords =
+            ((Word[])ReservedWord.reservedWords).Concat(NonReservedWord.nonReservedWords).ToArray();
 
-        private IList<Token> tokens = new List<Token>();
-        private string[] code;
+        /// <summary>
+        /// Resultado final do scan
+        /// </summary>
+        private readonly IList<Token> tokens = new List<Token>();
 
-        public CodeScanner(string[] code)
-        {
-            this.code = code;
-        }
+        /// <summary>
+        /// Linhas de codigo onde cada linha é um indice do array
+        /// </summary>
+        private readonly string[] code;
 
+        /// <summary>
+        /// Construtor do CodeScanner 
+        /// </summary>
+        /// <param name="code">Linhas de codigo a serem escaneadas</param>
+        public CodeScanner(string[] code) { this.code = code; }
+
+        /// <summary>
+        /// Realiza o scan processando o codigo passado
+        /// </summary>
+        /// <returns>Array contendo os tokens encontrados</returns>
         public Token[] Scan()
         {
             if (tokens.Count == 0)
@@ -27,7 +46,7 @@ namespace AnalizadorLexicoScanner
                 for (int lineIndex = 0; lineIndex < code.Length; lineIndex++)
                 {
                     TaskbarManager.Instance.SetProgressValue(lineIndex, code.Length);
-                    ScanLine(code[lineIndex], tokens.Count, lineIndex + 1);
+                    ScanLine(code[lineIndex], lineIndex + 1);
                 }
 
                 TaskbarManager.Instance.SetProgressState(TaskbarProgressBarState.NoProgress);
@@ -35,49 +54,56 @@ namespace AnalizadorLexicoScanner
             return tokens.ToArray();
         }
 
-        private void ScanLine(string line, int index, int lineIndex)
+        /// <summary>
+        /// Realiza o scan de apenas uma linha e adiciona o resultado na lista de tokens
+        /// </summary>
+        /// <param name="line">Linha a ser escaneada</param>
+        /// <param name="lineIndex">Numero da linha atual</param>
+        private void ScanLine(string line, int lineIndex)
         {
+            // rawLine uma copia da linha original 
             string rawLine = line;
 
-            while (true)
+            // Linha do inicio da interação
+            string startLine;
+
+            // Loop do scan
+            do
             {
-                string startLine = line = line.Trim();
-                Regex currentRegex = new Regex("");
+                // Define variaveis usadas
+                startLine = line = line.Trim();
                 int currentIndex = int.MaxValue;
+                Regex currentRegex = null;
                 Token currentToken = null;
 
-                for (int i = 0; i < nonReservedWords.Length; i++)
+                // Procura todas as palavras no codigo
+                foreach (Word word in ListOfWords)
                 {
-                    Match match = nonReservedWords[i].wordRegex.Match(line);
-                    if (match.Success && match.Index < currentIndex)
-                    {
-                        currentIndex = match.Index;
-                        currentRegex = nonReservedWords[i].wordRegex;
-                        currentToken = new Token(match.Value, nonReservedWords[i].token, index.ToString(), lineIndex.ToString());
-                        if (currentIndex == 0) break;
-                    }
-                }
-
-                for (int i = 0; i < reservedWords.Length; i++)
-                {
-                    Match match = reservedWords[i].wordRegex.Match(line);
+                    Match match = word.WordRegex.Match(line);
                     if (match.Success && match.Index <= currentIndex)
                     {
                         currentIndex = match.Index;
-                        currentRegex = reservedWords[i].wordRegex;
-                        currentToken = new Token(reservedWords[i].lexema, reservedWords[i].token, index.ToString(), lineIndex.ToString());
+                        currentRegex = word.WordRegex;
+                        // Constroi um token com a palavra encontrada
+                        currentToken = new Token(
+                            word is ReservedWord w ? w.Lexema : match.Value,
+                            word.Token,
+                            tokens.Count.ToString(),
+                            lineIndex.ToString());
+
+                        // Caso ja seja 
                         if (currentIndex == 0) break;
                     }
                 }
 
-                line = currentRegex.Replace(line, "", 1);
+                if (currentRegex != null) line = currentRegex.Replace(line, "", 1);
                 if (currentToken != null) tokens.Add(currentToken);
-                if (startLine == line) break;
-                index++;
-            }
-          
-            if (new Regex("\\S+").Match(line).Success)
-                tokens.Add(new Token("Linha com erro: \"" + rawLine + "\"", lineIndex.ToString()));
+            } while (startLine != line);
+
+            // Caso sobre algo significa que existe coisas invalidas 
+            if (new Regex("\\S+").IsMatch(line))
+                // Gera a mensagem de erro
+                tokens.Add(new Token($"Linha com erro: {rawLine}", lineIndex.ToString()));
         }
     }
 }

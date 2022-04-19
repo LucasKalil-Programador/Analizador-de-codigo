@@ -104,7 +104,7 @@
             this.codeTextArea.TabIndex = 0;
             this.codeTextArea.Text = "";
             this.codeTextArea.WordWrap = false;
-            this.codeTextArea.TextChanged += new System.EventHandler(this.codeTextArea_TextChanged);
+            this.codeTextArea.TextChanged += new System.EventHandler(this.CodeTextArea_TextChanged);
             // 
             // codePanelAnalize
             // 
@@ -339,7 +339,7 @@
             this.savePorjectButton.TabIndex = 1;
             this.savePorjectButton.Text = "Salvar projeto";
             this.savePorjectButton.UseVisualStyleBackColor = true;
-            this.savePorjectButton.Click += new System.EventHandler(this.saveProjectButton_Click);
+            this.savePorjectButton.Click += new System.EventHandler(this.SaveProjectButton_Click);
             // 
             // runLayout
             // 
@@ -379,7 +379,7 @@
             this.buttonAnalize.TabIndex = 0;
             this.buttonAnalize.Text = "Analizar codigo";
             this.buttonAnalize.UseVisualStyleBackColor = false;
-            this.buttonAnalize.Click += new System.EventHandler(this.buttonAnalize_Click);
+            this.buttonAnalize.Click += new System.EventHandler(this.ButtonAnalize_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -415,7 +415,7 @@
             0,
             0,
             0});
-            this.fontSize.ValueChanged += new System.EventHandler(this.fontSize_ValueChanged);
+            this.fontSize.ValueChanged += new System.EventHandler(this.FontSize_ValueChanged);
             // 
             // label1
             // 
@@ -439,7 +439,7 @@
             this.openProjectButton.TabIndex = 6;
             this.openProjectButton.Text = "Abrir projeto";
             this.openProjectButton.UseVisualStyleBackColor = true;
-            this.openProjectButton.Click += new System.EventHandler(this.openProjectButton_Click);
+            this.openProjectButton.Click += new System.EventHandler(this.OpenProjectButton_Click);
             // 
             // openFileDialog
             // 

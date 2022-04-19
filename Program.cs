@@ -5,6 +5,7 @@ namespace AnalizadorMain
 {
     internal static class Program
     {
+        // Main do analizador de codigo
         [STAThread]
         static void Main(string[] args)
         {

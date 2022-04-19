@@ -4,29 +4,43 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using static System.Windows.Forms.DialogResult;
 
 
 namespace AnalizadorMain
 {
+    /// <summary>
+    /// Janela aonde o analizador e exibido
+    /// </summary>
     public partial class AnalizadorWindow : Form
     {
+
+        /// <summary>
+        /// Execulta a inicialização da janela
+        /// </summary>
         public AnalizadorWindow()
         {
             InitializeComponent();
             fontSize.Value = (decimal)codeTextArea.Font.Size;
         }
 
-        private void codeTextArea_TextChanged(object sender, EventArgs e)
+        /// <summary>
+        /// Execultado ao alterar o texto no Code Text Area
+        /// </summary>
+        private void CodeTextArea_TextChanged(object sender, EventArgs e)
         {
-            if (autoAnalize.Checked) updateTable();
+            if (autoAnalize.Checked) UpdateTable();
         }
 
-        private void buttonAnalize_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Execultado ao clickar no Botao de analizar
+        /// </summary>
+        private void ButtonAnalize_Click(object sender, EventArgs e)
         {
-            updateTable();
+            if (!autoAnalize.Checked) UpdateTable();
         }
 
-        private void updateTable()
+        private void UpdateTable()
         {
             long time = System.DateTime.Now.Ticks;
             CodeScanner analizador = new CodeScanner(codeTextArea.Lines);
@@ -42,7 +56,10 @@ namespace AnalizadorMain
             Console.WriteLine("Tempo de processamento demorou: " + new TimeSpan(System.DateTime.Now.Ticks - time));
         }
 
-        private void fontSize_ValueChanged(object sender, EventArgs e)
+        /// <summary>
+        /// Execultado ao alterar o tamanho da font
+        /// </summary>
+        private void FontSize_ValueChanged(object sender, EventArgs e)
         {
             Font fontOld = codeTextArea.Font;
             codeTextArea.Font = new Font(
@@ -53,12 +70,15 @@ namespace AnalizadorMain
                 fontOld.GdiCharSet);
         }
 
-        private void openProjectButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Execultado ao clickar para abrir um projeto
+        /// </summary>
+        private void OpenProjectButton_Click(object sender, EventArgs e)
         {
             try
             {
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                { 
+                if (openFileDialog.ShowDialog() == OK)
+                {
                     string path = openFileDialog.FileName;
                     StreamReader streamReader = new StreamReader(path);
                     codeTextArea.Text = streamReader.ReadToEnd();
@@ -71,9 +91,12 @@ namespace AnalizadorMain
             }
         }
 
-        private void saveProjectButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Execultado ao clickar para salvar um projeto
+        /// </summary>
+        private void SaveProjectButton_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            if (saveFileDialog.ShowDialog() == OK)
             {
                 string path = saveFileDialog.FileName;
                 StreamWriter streamWriter = new StreamWriter(path);
