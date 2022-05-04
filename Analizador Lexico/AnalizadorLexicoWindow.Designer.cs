@@ -1,6 +1,6 @@
-﻿namespace AnalizadorMain
+﻿namespace AnalyzerMain.Lexicon
 {
-    partial class AnalizadorWindow
+    partial class Window
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -58,6 +58,7 @@
             this.fontSize = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.openProjectButton = new System.Windows.Forms.Button();
+            this.goToAyntacticAnalyzerButton = new System.Windows.Forms.Button();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.mainLayout.SuspendLayout();
@@ -313,21 +314,24 @@
             // 
             this.optionsLayout.ColumnCount = 1;
             this.optionsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.optionsLayout.Controls.Add(this.savePorjectButton, 0, 3);
-            this.optionsLayout.Controls.Add(this.runLayout, 0, 4);
+            this.optionsLayout.Controls.Add(this.savePorjectButton, 0, 4);
+            this.optionsLayout.Controls.Add(this.runLayout, 0, 5);
             this.optionsLayout.Controls.Add(this.tableLayoutPanel1, 0, 0);
-            this.optionsLayout.Controls.Add(this.openProjectButton, 0, 2);
+            this.optionsLayout.Controls.Add(this.openProjectButton, 0, 3);
+            this.optionsLayout.Controls.Add(this.goToAyntacticAnalyzerButton, 0, 2);
             this.optionsLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.optionsLayout.Location = new System.Drawing.Point(691, 23);
             this.optionsLayout.Name = "optionsLayout";
-            this.optionsLayout.RowCount = 5;
+            this.optionsLayout.RowCount = 6;
             this.optionsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.optionsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.optionsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.optionsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.optionsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.optionsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.optionsLayout.Size = new System.Drawing.Size(290, 535);
             this.optionsLayout.TabIndex = 6;
+            this.optionsLayout.Paint += new System.Windows.Forms.PaintEventHandler(this.OptionsLayout_Paint);
             // 
             // savePorjectButton
             // 
@@ -441,6 +445,18 @@
             this.openProjectButton.UseVisualStyleBackColor = true;
             this.openProjectButton.Click += new System.EventHandler(this.OpenProjectButton_Click);
             // 
+            // goToAyntacticAnalyzerButton
+            // 
+            this.goToAyntacticAnalyzerButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.goToAyntacticAnalyzerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.goToAyntacticAnalyzerButton.Location = new System.Drawing.Point(3, 377);
+            this.goToAyntacticAnalyzerButton.Name = "goToAyntacticAnalyzerButton";
+            this.goToAyntacticAnalyzerButton.Size = new System.Drawing.Size(284, 31);
+            this.goToAyntacticAnalyzerButton.TabIndex = 7;
+            this.goToAyntacticAnalyzerButton.Text = "Ir para o analizador sintatico";
+            this.goToAyntacticAnalyzerButton.UseVisualStyleBackColor = true;
+            this.goToAyntacticAnalyzerButton.Click += new System.EventHandler(this.GoToSyntacticAnalyzer_Click);
+            // 
             // openFileDialog
             // 
             this.openFileDialog.Filter = "Arquivos .txt (*.txt)|*.txt";
@@ -449,7 +465,7 @@
             // 
             this.saveFileDialog.Filter = "Arquivos .txt (*.txt)|*.txt";
             // 
-            // AnalizadorWindow
+            // Window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -457,9 +473,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.mainLayout);
-            this.Name = "AnalizadorWindow";
+            this.Name = "Window";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Analizador";
+            this.Text = "Analizador Lexico";
             this.mainLayout.ResumeLayout(false);
             this.mainLayout.PerformLayout();
             this.tokensLayout.ResumeLayout(false);
@@ -504,6 +520,7 @@
         private System.Windows.Forms.Button savePorjectButton;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.Button goToAyntacticAnalyzerButton;
     }
 }
 

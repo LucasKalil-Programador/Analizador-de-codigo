@@ -5,13 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace AnalizadorLexicoScanner
+namespace LexiconScanner
 {
 
     /// <summary>
     /// Classe que escanea um codigo
     /// </summary>
-    public class CodeScanner
+    public class LexiconCodeScanner
     {
         /// <summary>
         /// Lista de palavras a serem procuradas no codigo
@@ -33,7 +33,7 @@ namespace AnalizadorLexicoScanner
         /// Construtor do CodeScanner 
         /// </summary>
         /// <param name="code">Linhas de codigo a serem escaneadas</param>
-        public CodeScanner(string[] code) { this.code = code; }
+        public LexiconCodeScanner(string[] code) { this.code = code; }
 
         /// <summary>
         /// Realiza o scan processando o codigo passado

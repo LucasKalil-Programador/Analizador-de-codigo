@@ -55,19 +55,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Analizador Lexico\LexiconCodeScanner.cs" />
     <Compile Include="Analizador Lexico\Word.cs" />
     <Compile Include="Analizador Lexico\Token.cs" />
-    <Compile Include="Analizador Lexico\CodeScanner.cs" />
     <Compile Include="Analizador Lexico\AnalizadorLexicoWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Analizador Lexico\AnalizadorLexicoWindow.Designer.cs">
       <DependentUpon>AnalizadorLexicoWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Analizador Sintatico\AnalizadorSintaticoWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analizador Sintatico\AnalizadorSintaticoWindow.Designer.cs">
+      <DependentUpon>AnalizadorSintaticoWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Analizador Lexico\AnalizadorLexicoWindow.resx">
       <DependentUpon>AnalizadorLexicoWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Analizador Sintatico\AnalizadorSintaticoWindow.resx">
+      <DependentUpon>AnalizadorSintaticoWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

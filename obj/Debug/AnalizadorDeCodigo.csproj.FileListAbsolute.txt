@@ -23,10 +23,11 @@ C:\Users\lucas\OneDrive\C# Projets\WindowsFormsApp1\Analizador-de-codigo\bin\Deb
 C:\Users\lucas\OneDrive\C# Projets\WindowsFormsApp1\Analizador-de-codigo\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
 C:\Users\lucas\OneDrive\C# Projets\WindowsFormsApp1\Analizador-de-codigo\obj\Debug\AnalizadorDeCodigo.csproj.AssemblyReference.cache
 C:\Users\lucas\OneDrive\C# Projets\WindowsFormsApp1\Analizador-de-codigo\obj\Debug\AnalizadorDeCodigo.csproj.SuggestedBindingRedirects.cache
-C:\Users\lucas\OneDrive\C# Projets\WindowsFormsApp1\Analizador-de-codigo\obj\Debug\AnalizadorMain.AnalizadorWindow.resources
 C:\Users\lucas\OneDrive\C# Projets\WindowsFormsApp1\Analizador-de-codigo\obj\Debug\Analizador.Properties.Resources.resources
 C:\Users\lucas\OneDrive\C# Projets\WindowsFormsApp1\Analizador-de-codigo\obj\Debug\AnalizadorDeCodigo.csproj.GenerateResource.cache
 C:\Users\lucas\OneDrive\C# Projets\WindowsFormsApp1\Analizador-de-codigo\obj\Debug\AnalizadorDeCodigo.csproj.CoreCompileInputs.cache
 C:\Users\lucas\OneDrive\C# Projets\WindowsFormsApp1\Analizador-de-codigo\obj\Debug\AnalizadorDeCodigo.csproj.CopyComplete
 C:\Users\lucas\OneDrive\C# Projets\WindowsFormsApp1\Analizador-de-codigo\obj\Debug\Analizador.exe
 C:\Users\lucas\OneDrive\C# Projets\WindowsFormsApp1\Analizador-de-codigo\obj\Debug\Analizador.pdb
+C:\Users\lucas\OneDrive\C# Projets\WindowsFormsApp1\Analizador-de-codigo\obj\Debug\AnalyzerMain.Lexicon.Window.resources
+C:\Users\lucas\OneDrive\C# Projets\WindowsFormsApp1\Analizador-de-codigo\obj\Debug\AnalyzerMain.Syntactic.Window.resources
