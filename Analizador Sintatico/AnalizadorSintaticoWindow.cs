@@ -1,7 +1,10 @@
 ﻿using System;
-using System.Drawing;
 using System.IO;
+using LexiconScanner;
+using System.Drawing;
+using SyntacticScanner;
 using System.Windows.Forms;
+using AnalizadorLexicoToken;
 using static System.Windows.Forms.DialogResult;
 
 namespace AnalyzerMain.Syntactic
@@ -28,6 +31,9 @@ namespace AnalyzerMain.Syntactic
         private void UpdateErros()
         {
             long time = System.DateTime.Now.Ticks;
+
+            Token[] resultScan = new LexiconCodeScanner(codeTextArea.Lines).Scan();
+            errorsTextArea.Text = new SyntacticCodeScanner(resultScan).Scan();
 
             Console.WriteLine("Tempo de processamento da analize Sintatica demorou: " + new TimeSpan(System.DateTime.Now.Ticks - time));
         }

@@ -64,6 +64,7 @@
     <Compile Include="Analizador Lexico\AnalizadorLexicoWindow.Designer.cs">
       <DependentUpon>AnalizadorLexicoWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Analizador Sintatico\SyntacticCodeScanner.cs" />
     <Compile Include="Analizador Sintatico\AnalizadorSintaticoWindow.cs">
       <SubType>Form</SubType>
     </Compile>
