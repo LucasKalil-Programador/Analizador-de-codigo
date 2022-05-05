@@ -15,7 +15,7 @@ namespace SyntacticScanner
             string line = "";
             for (int i = 0; i < tokens.Length; i++)
             {
-                if(tokens[i].lineIndex != line)
+                if (tokens[i].lineIndex != line)
                 {
                     list.Add(new List<Token>());
                     line = tokens[i].lineIndex;
@@ -31,7 +31,19 @@ namespace SyntacticScanner
 
         public string Scan()
         {
-            return "Nenhum erro encontrado";
+            string Result = "";
+
+            for (int i = 0; i < tokens.Length; i++)
+            {
+                Result += ScanLine(tokens[i]) + "\r\n";
+            }
+
+            return Result == "" ? "Nenhum erro encontrado" : Result;
+        }
+
+        public string ScanLine(Token[] line)
+        {
+            return "";
         }
     }
 }
