@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System;
 using System.Linq;
+using SyntacticScanner.Cases;
 
 namespace SyntacticScanner
 {
     class SyntacticCodeScanner
     {
+        Case[] cases = Case.GetAllCases();
+
         private readonly Token[][] tokens;
 
         public SyntacticCodeScanner(Token[] tokens)
@@ -32,17 +35,23 @@ namespace SyntacticScanner
         public string Scan()
         {
             string Result = "";
-
+            
             for (int i = 0; i < tokens.Length; i++)
             {
                 Result += ScanLine(tokens[i]) + "\r\n";
             }
-
+            
             return Result == "" ? "Nenhum erro encontrado" : Result;
         }
 
         public string ScanLine(Token[] line)
         {
+            foreach (Case c in cases)
+            {
+                c.Line = line;
+                if (c.CheckCase()) return c.Result;
+            }
+            
             return "";
         }
     }

@@ -159,6 +159,7 @@ namespace AnalizadorLexicoWord
           /*changed*/ new ReservedWord("GNegativeonblock", "Identificador booleano",    "GNegativeonblock"),
 
           // outros
+          /*changed*/ new ReservedWord("GBuy",     "Import de clases externas"),
           /*changed*/ new ReservedWord("GParry",   "Retorno de Metodo", @"(\s|^)GParry(\s|;)"),
           /*changed*/ new ReservedWord("GFnull",   "Objeto nullo"),
           new ReservedWord(".", "Conector",          @"\."),
