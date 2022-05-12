@@ -1,5 +1,4 @@
-﻿using AnalizadorLexicoToken;
-using System;
+﻿using System;
 
 namespace SyntacticScanner.Cases
 {
@@ -14,8 +13,6 @@ namespace SyntacticScanner.Cases
 
         public override bool CheckCase()
         {
-            if (!oldCheck) return false;
-
             string lineIndex = Line.Length > 0 ? Line[0].lineIndex : "";
 
             for (int i = 0; i < Line.Length; i++)
@@ -24,6 +21,12 @@ namespace SyntacticScanner.Cases
                 {
                     if (Line[i].lexema == "GBuy")
                     {
+                        if(!oldCheck)
+                        {
+                            Result = $"linha {lineIndex} fora de lugar";
+                            return true;
+                        }
+
                         if (Line.Length == i + 1)
                         {
                             Result = $"Items faltando na linha {lineIndex}";
@@ -90,7 +93,7 @@ namespace SyntacticScanner.Cases
                     }
                 }
             }
-            
+
             throw new InvalidOperationException($"Erro inesperado no {this.GetType()}");
         }
     }

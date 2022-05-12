@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AnalizadorLexicoToken;
+﻿using AnalizadorLexicoToken;
+using System;
 
 namespace SyntacticScanner.Cases
 {
@@ -17,6 +13,6 @@ namespace SyntacticScanner.Cases
 
         public abstract bool CheckCase();
 
-        public static Case[] GetAllCases() => new Case[] { new ImportCase() };
+        public static Case[] GetAllCases() => new Case[] { new ImportCase(), new ReturnCase() };
     }
 }

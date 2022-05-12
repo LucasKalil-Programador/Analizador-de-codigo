@@ -1,14 +1,13 @@
 ﻿using AnalizadorLexicoToken;
-using System.Collections.Generic;
-using System;
-using System.Linq;
 using SyntacticScanner.Cases;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SyntacticScanner
 {
     class SyntacticCodeScanner
     {
-        Case[] cases = Case.GetAllCases();
+        private readonly Case[] cases = Case.GetAllCases();
 
         private readonly Token[][] tokens;
 
@@ -35,12 +34,12 @@ namespace SyntacticScanner
         public string Scan()
         {
             string Result = "";
-            
+
             for (int i = 0; i < tokens.Length; i++)
             {
                 Result += ScanLine(tokens[i]) + "\r\n";
             }
-            
+
             return Result == "" ? "Nenhum erro encontrado" : Result;
         }
 
@@ -51,7 +50,7 @@ namespace SyntacticScanner
                 c.Line = line;
                 if (c.CheckCase()) return c.Result;
             }
-            
+
             return "";
         }
     }

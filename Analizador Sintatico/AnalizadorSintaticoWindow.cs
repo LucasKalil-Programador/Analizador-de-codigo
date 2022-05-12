@@ -1,10 +1,10 @@
-﻿using System;
-using System.IO;
+﻿using AnalizadorLexicoToken;
 using LexiconScanner;
-using System.Drawing;
 using SyntacticScanner;
+using System;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
-using AnalizadorLexicoToken;
 using static System.Windows.Forms.DialogResult;
 
 namespace AnalyzerMain.Syntactic
