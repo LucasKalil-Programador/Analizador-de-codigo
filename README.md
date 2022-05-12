@@ -1,12 +1,12 @@
 # Analizador-de-codigo
 
-Analizador lexico e sintatico com um codigo customizado ciado baseado em jogos populares
+Analisador léxico e sintático com um código customizado ciado baseado em jogos populares
 
 Estudos uteis realizados durante a execução do projeto 
 
-Regex amplamente usado no analizador lexico
+Regex amplamente usado no analisador léxico
 
-Windows forms criaçao de uma janela onde e exibido o status do analizador
+Windows forms criação de uma janela onde e exibido o estado do analisador
 
 
 
