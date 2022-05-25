@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 namespace SyntacticScanner.Cases
 {
@@ -106,7 +107,7 @@ namespace SyntacticScanner.Cases
                 }
             }
 
-            throw new System.InvalidOperationException($"Erro inesperado no {this.GetType()}");
+            throw new InvalidOperationException($"Erro inesperado no {this.GetType()}");
         }
     }
 }

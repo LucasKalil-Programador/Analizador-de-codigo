@@ -1,5 +1,6 @@
 ﻿using AnalizadorLexicoToken;
 using SyntacticScanner.Cases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -7,8 +8,6 @@ namespace SyntacticScanner
 {
     class SyntacticCodeScanner
     {
-        private readonly Case[] cases = Case.GetAllCases();
-
         private readonly Token[][] tokens;
 
         public SyntacticCodeScanner(Token[] tokens)
@@ -33,18 +32,27 @@ namespace SyntacticScanner
 
         public string Scan()
         {
-            string Result = "";
+            string result = "";
 
             for (int i = 0; i < tokens.Length; i++)
             {
-                Result += ScanLine(tokens[i]) + "\r\n";
+                string tmpResult = ScanLine(tokens[i]);
+                if(tmpResult != "") result += tmpResult + "\r\n";
             }
-
-            return Result == "" ? "Nenhum erro encontrado" : Result;
+            
+            return result == "" ? "Nenhum erro encontrado" : result;
         }
 
         public string ScanLine(Token[] line)
         {
+            foreach(Token token in line)
+            {
+                if (token.GetPossibleError() != null)
+                    return $"Existem erros lexicos na linha {token.lineIndex}";
+            }
+
+            Case[] cases = Case.GetAllCases();
+
             foreach (Case c in cases)
             {
                 c.Line = line;

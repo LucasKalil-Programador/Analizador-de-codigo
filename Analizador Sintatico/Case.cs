@@ -7,12 +7,17 @@ namespace SyntacticScanner.Cases
     {
         public Token[] Line { get; set; }
 
-        public string Result { get; protected set; }
+        private string result = "";
+
+        public string Result { get => result; protected set => result = value; }
 
         protected int State = 0;
 
         public abstract bool CheckCase();
 
-        public static Case[] GetAllCases() => new Case[] { new ImportCase(), new ReturnCase() };
+        public static Case[] GetAllCases() => new Case[] { 
+            new ImportCase(), 
+            new ReturnCase(), 
+            new PrimitiveCase() };
     }
 }

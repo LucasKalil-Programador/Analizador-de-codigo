@@ -102,10 +102,10 @@ namespace AnalizadorLexicoWord
           /*changed*/ new ReservedWord("GCamp",  "Modificador de acesso"),
           /*changed*/ new ReservedWord("GBell",  "Modificador de acesso"),
           /*changed*/ new ReservedWord("GGuard", "Modificador de acesso"),
-
+          
           // Modificadores de classes, variáveis ou métodos
           /*changed*/ new ReservedWord("GNeutral", "Modificadores de classes, variáveis ou métodos"),
-          /*changed*/ new ReservedWord("GDice",    "Modificadores de classes ou métodos"),
+          /*changed*/ new ReservedWord("GDice",    "Modificadores de classes, variáveis ou métodos"),
           /*changed*/ new ReservedWord("GTier",    "Declarador de clase"),
           /*changed*/ new ReservedWord("GCombo",   "Modificadores de classes"),
           /*changed*/ new ReservedWord("GOkizeme", "Modificadores de classes, variáveis ou métodos"),
@@ -119,7 +119,7 @@ namespace AnalizadorLexicoWord
           /*changed*/ new ReservedWord("GNRdec",   "Tipo primitivo"),
           /*changed*/ new ReservedWord("GNRint",   "Tipo primitivo"),
           /*changed*/ new ReservedWord("GHeavy",   "Tipo primitivo"),
-          /*changed*/ new ReservedWord("GEcko",     "Tipo primitivo"),
+          /*changed*/ new ReservedWord("GEcko",    "Tipo primitivo"),
           /*changed*/ new ReservedWord("GMinions", "Tipo primitivo"),
           /*changed*/ new ReservedWord("GWave",    "Tipo primitivo"),
 
@@ -147,14 +147,15 @@ namespace AnalizadorLexicoWord
           new ReservedWord("/", "Operador matematico", "/"),
           new ReservedWord("-", "Operador matematico", "-"),
           new ReservedWord("=", "Operador matematico", "="),
+          new ReservedWord("%", "Operador matematico", "%"),
 
           // Loops e condicionais
           /*changed*/ new ReservedWord("GComboloop",       "Inicializador de loop",     "GComboloop"),
-          /*changed*/ new ReservedWord("GWard",           "Inicializador condicional",  "GWard"),
-          /*changed*/ new ReservedWord("GGank",           "Continuação condiconal",     "GGank"),
-          /*changed*/ new ReservedWord("GChalice",        "Inicializador condicional",  "GChalice"),
-          /*changed*/ new ReservedWord("GGlyph",          "Continuação condiconal",     "GGlyph"),
-          /*changed*/ new ReservedWord("GLoop",           "Inicializador de loop",      "GLoop"),
+          /*changed*/ new ReservedWord("GWard",            "Inicializador condicional",  "GWard"),
+          /*changed*/ new ReservedWord("GGank",            "Continuação condiconal",     "GGank"),
+          /*changed*/ new ReservedWord("GChalice",         "Inicializador condicional",  "GChalice"),
+          /*changed*/ new ReservedWord("GGlyph",           "Continuação condiconal",     "GGlyph"),
+          /*changed*/ new ReservedWord("GLoop",            "Inicializador de loop",      "GLoop"),
           /*changed*/ new ReservedWord("GSafeonblock",     "Identificador booleano",    "GSafeonblock"),
           /*changed*/ new ReservedWord("GNegativeonblock", "Identificador booleano",    "GNegativeonblock"),
 
