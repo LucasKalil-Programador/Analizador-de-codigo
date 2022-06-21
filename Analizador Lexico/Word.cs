@@ -172,3 +172,34 @@ namespace AnalizadorLexicoWord
         };
     }
 }
+
+//import Collections.List;
+//import ABC.Example.*;
+
+//public static void Main()
+//{
+//    int valueA = 12;
+//    int valueB = 24;
+//    int result = GFnull;
+
+//    for (int i = 0; i < 10; i++)
+//    {
+//        valueA *= valueB * i;
+//    }
+
+//    result = valueA / valueB * 10000;
+//    boolean isPair = (result % 2) == 2;
+
+//    if (isPair)
+//    {
+//        System.out.println("o resultado é par!");
+//    }
+//    else
+//    {
+//        System.out.println("o resultado não é par!")
+//    }
+//}
+
+
+
+
