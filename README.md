@@ -23,7 +23,7 @@ código invalido na linguagem criada.
 
 ```java
 
-// regra da linguagem variáveis nao podem iniciar com 'G'
+// violação da regra "variáveis nao podem iniciar com 'G'"
 GRNint Gvariavel1 = 90;
 ```
 
