@@ -2,6 +2,8 @@
 
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/LucasKalil-Programador/Analizador-de-codigo/blob/5d065ea49c6e218d406ab51f9bb0e8fac1a103b0/Licence)
 
+[Video de apresentação](https://www.youtube.com/watch?v=_ITKZamo9j0)
+
 # Sobre o projeto
 
 Esse projeto teve como objetivo principal servir para a matéria de compiladores do curso de ciências da computação, o objetivo era criar um analisador léxico que com base em uma sequencia de caracteres, extrairia cada token e seu devido tipo caso o software encontrasse algum problema era necessário informar isso para o usuário.
